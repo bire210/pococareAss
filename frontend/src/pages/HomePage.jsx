@@ -12,7 +12,7 @@ const HomePage = () => {
  const getUserData = async () => {
   try {
     const res = await axios.get(
-      "/api/user/getAllDoctors",
+      "https://docotorbookingsytem.onrender.com/api/user/getAllDoctors",
       {
         headers: {
           Authorization: "Bearer "+localStorage.getItem("token"),

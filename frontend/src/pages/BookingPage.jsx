@@ -19,7 +19,7 @@ const BookingPage = () => {
   const getUserData = async () => {
     try {
       const res = await axios.post(
-        "/api/doctor/getDoctorById",
+        "https://docotorbookingsytem.onrender.com/api/doctor/getDoctorById",
         { doctorId: params.doctorId },
         {
           headers: {
@@ -39,7 +39,7 @@ const BookingPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/user/booking-availbility",
+        "https://docotorbookingsytem.onrender.com/api/user/booking-availbility",
         { doctorId: params.doctorId, date, time },
         {
           headers: {
@@ -69,7 +69,7 @@ const BookingPage = () => {
       }
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/user/book-appointment",
+        "https://docotorbookingsytem.onrender.com/api/user/book-appointment",
         {
           doctorId: params.doctorId,
           userId: user._id,

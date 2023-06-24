@@ -2,6 +2,7 @@ const express=require("express");
 const colors = require("colors");
 const morgan = require("morgan");
 const cors=require("cors");
+const path=require("path")
 const connection = require("./config/dbConnect");
 const userRouter = require("./routes/userRoutes");
 const adminRouter = require("./routes/adminRoutes");
@@ -22,6 +23,11 @@ app.use("/api/user",userRouter)
 app.use("/api/admin",adminRouter)
 app.use("/api/doctor",docRouter );
 
+app.use(express.static(path.join(__dirname,'./frontend/build')))
+
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,'./frontend/build/index.html'))
+})
 const port=process.env.port;
 app.listen(port,async()=>{
 

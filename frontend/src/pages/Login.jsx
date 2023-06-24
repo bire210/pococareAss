@@ -14,7 +14,7 @@ const Login = () => {
     
     try {
       dispatch(showLoading());
-      const res = await axios.post("/api/user/login", values);
+      const res = await axios.post("https://docotorbookingsytem.onrender.com/api/user/login", values);
       window.location.reload()
       dispatch(hideLoading());
       if (res.data.success) {

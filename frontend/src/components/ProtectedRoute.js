@@ -15,7 +15,7 @@ export default function ProtectedRoute({ children }) {
     try {
       dispatch(showLoading());
       const res = await axios.get(
-        "/api/user/getUserData",
+        "https://docotorbookingsytem.onrender.com/api/user/getUserData",
        
         {
           headers: {

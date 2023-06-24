@@ -19,7 +19,7 @@ const Profile = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/doctor/updateProfile",
+        "https://docotorbookingsytem.onrender.com/api/doctor/updateProfile",
         {
           ...values,
           userId: user._id,
@@ -53,7 +53,7 @@ const Profile = () => {
   const getDoctorInfo = async () => {
     try {
       const res = await axios.post(
-        "/api/doctor/getDoctorInfo",
+        "https://docotorbookingsytem.onrender.com/api/doctor/getDoctorInfo",
         { userId: params.id },
         {
           headers: {

@@ -15,7 +15,7 @@ const NotificationPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/user/get-all-notification",
+        "https://docotorbookingsytem.onrender.com/api/user/get-all-notification",
         {
           userId: user._id,
         },
@@ -43,7 +43,7 @@ const NotificationPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/user/delete-all-notification",
+        "https://docotorbookingsytem.onrender.com/api/user/delete-all-notification",
         { userId: user._id },
         {
           headers: {
